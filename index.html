@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cutonangular JS</title>
+
+	<!--css -->
+	<link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<!-- Angular -->
+	<script src="bower_components/angular/angular.min.js"></script>
+
+</head>
+<body ng-app="app">
+
+	<!-- nav bar -->
+	<nav class="navbar navbar-inverse">
+		<a class="navbar-brand" href="#">Angular</a>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+		</ul>
+	</nav>
+	
+	<!-- contain -->
+	<div class="container-fluid">
+		<div class="row" ng-controller="MyCtrl">
+			<div class="col-md-4 text-center" ng-repeat="champion in champions">
+				<h2 ng-bind="champion.name"></h2>
+				<img ng-src="champions/{{champion.name}}_0.jpg" alt="{{champion.name}}">
+				<p ng-bind="champion.desc"></p>
+				<div class="tag" ng-repeat="tag in champion.tags">
+					<span class="label label-success" ng-bind="tag"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- libs -->
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+</body>
+</html>
