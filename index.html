@@ -25,8 +25,12 @@
 	
 	<!-- contain -->
 	<div class="container-fluid">
-		<div class="row" ng-controller="MyCtrl">
-			<div class="col-md-4 text-center" ng-repeat="champion in champions">
+		<div class="champions" ng-controller="MyCtrl">
+			<div class="search-box">
+			<h1 class="text-center">Search Champion</h1>
+				<input type="text" ng-model="search.name" placeholder="Search ..." class="form-control" value="" required="required" pattern="" title="Search">
+			</div>
+			<div class="col-md-4 text-center" ng-repeat="champion in champions | filter:search">
 				<h2 ng-bind="champion.name"></h2>
 				<img ng-src="champions/{{champion.name}}_0.jpg" alt="{{champion.name}}">
 				<p ng-bind="champion.desc"></p>

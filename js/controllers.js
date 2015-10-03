@@ -694,7 +694,10 @@
 		        "support",
 		        "ranged"
 		      ]
-		  }];
+		  },{"name":"puto"
+		  		
+		}
+		  ];
 
 		});
 
